@@ -1,0 +1,107 @@
+//payment API
+
+
+
+// payments API
+
+
+Payment Process:
+
+    (1) Zomato App:
+
+            Zomato FE (ReactJS)
+            
+            Zomato BE (NodeJS)
+
+
+    (2) Payment Gateway - Paytm system
+
+
+Step 1: Zomato FE will send a payment request to Zomato BE
+
+    /payment:
+        req {
+            amount: 300,
+            email: "abc@def.com",
+            mobileNo: "89898989898"
+        }
+
+
+Step 2: Zomato BE will send a response to Zomato FE for the above request
+
+    res: will contain some secure and secret information
+
+
+Step 3: Zomato FE will take this secret information and go to the Paytm System
+
+
+Step 4: now user is on the paytm website, user will make the payment
+        -> credit card
+        -> debit card
+        -> netbanking
+        -> UPI Id
+        -> wallet
+        -> food cards
+
+
+Step 5: User will come back to Zomato FE and Paytm system will inform Zomato BE
+
+    /paymentCallback
+        -> success
+        -> failure
+
+
+Step 6: Zomato BE will confirm the payment status again from the Zomato system
+
+
+
+
+//// Paytm Gateway
+
+    -> https://developer.paytm.com/
+    -> login with existing paytm account, if not then create an account on paytm and then login
+    -> enable the test mode
+    -> get the API keys (test API details)
+    -> these API keys will be used in Zomato BE, to generate secure information and communicate with the paytm system
+    -> in order to use these keys in the Zomato BE
+        -> need to create a special file in Zomato BE, known as .env file
+        -> copy paste the keys in this file
+    -> after this, we need an external library from paytm, to create and read the secure and secret information
+        -> https://github.com/paytm/Paytm_Node_Checksum/blob/master/PaytmChecksum.js
+        -> download this file and keep it in the Zomato BE controllers folder
+    -> Now, we need 5 packages from npmjs.com
+        -> dotenv : to read the keys written in .env file
+        -> formidable : we will be reading data from the paytm system using this package
+        -> uuid : to generate a unique Id for every payment
+        -> https : to secure the communication with the paytm system
+        -> crypto : required by the PaytmChecksum.js
+
+        > npm i dotenv formidable uuid https crypto --save 
+
+    -> The last thing is to create 2 APIs in the Zomato BE
+        -> /payment
+        -> /paymentCallback
+
+
+
+---> task for learners:
+
+    Create APIs for the following:
+
+        -> saveOrderDetails
+            POST request /saveOrderDetails
+            {
+                items,  // array
+                amount, // number
+                email,  // string
+                mobileNo, // string
+                address // string
+            }
+
+            -> order controller
+            -> order model
+            -> order collection in MongoDb
+
+        -> getOrderDetailsByUser
+            GET request /getOrderDetailsByUser/:userEmail
+            response : for the given email, you will find the orders

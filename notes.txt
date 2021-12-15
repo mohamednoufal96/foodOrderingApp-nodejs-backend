@@ -1,0 +1,42 @@
+//Creation of  APIs
+
+-> Homepage
+    - GET: getLocations
+    - GET: getRestaurantsforLocation
+    - GET: getMealtypes
+
+-> Filters page
+    - POST: filters
+        -location, mealtype, cuisine, lcost, hcost, sort, page
+
+-> Details page
+    - GET: getRestaurantById
+    - GET: getMenuForRestaurant
+    - POST: payment
+    - POST: paymentCallback
+    - GET: getOrderById
+     
+-> Header
+    - POST: login
+    - POST: signup
+    
+//Project Structure
+
+Models
+    - Locations.js
+    - Mealtypes.js
+    - Users.js
+    - Restaurants.js
+    - Menu.js
+    - Orders.js
+    
+Controllers
+    - Locations.js
+    - Mealtypes.js
+    - Users.js
+    - Restaurants.js
+    - Menu.js
+    - Orders.js
+    - Payments.js
+
+Routes
