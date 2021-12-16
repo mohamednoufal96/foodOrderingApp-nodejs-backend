@@ -24,7 +24,7 @@ router.post("/payment", paymentsController.payment);
 router.post("/paymentCallback", paymentsController.paymentCallback);
 
 // router.post("/saveOrderDetails", orderDetailsController.saveOrderDetails);
-// router.get("/getOrderDetals/:user_email", orderDetailsController.getOrderDetailsByUser);
+// router.get("/getOrderDetals/:username", orderDetailsController.getOrderDetailsByUser);
 
 // export the routes
 module.exports = router;

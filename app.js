@@ -14,18 +14,18 @@ const port = 5454;
 
 // handle the CORS
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
     next();
 });
 
 // start using the routes
-app.use('/', routes);
+app.use("/", routes);
 
 //connection to mongodb
 mongoose
-    .connect("mongodb+srv://root:root123@cluster0.k4omk.mongodb.net/zomatodb?retryWrites=true&w=majority", {
+    .connect("mongodb+srv://root-user:user12345@cluster0.k4omk.mongodb.net/zomatodb?retryWrites=true&w=majority", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })

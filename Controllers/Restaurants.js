@@ -72,7 +72,7 @@ exports.filterRestaurants = (req, res) => {
         }
     }
 
-    Restaurant.find(filters)
+    Restaurants.find(filters)
         .sort({ min_price: sort })
         .then((result) => {
             const pageSize = 2;
@@ -84,15 +84,7 @@ exports.filterRestaurants = (req, res) => {
                 return paginatedResult;
             }
 
-            /*
-            function paginate(arr, page_size, page_no) {
-                let paginatedResult = [];
-                let start_index = page_size * page_no - 1;
-                let end_index = page_size * page_no;
-                paginatedResult = arr.slice(start_index, end_index);
-                return paginatedResult;
-            }
-            */
+          
 
             tempArray = paginate(result, pageSize, page);
 
