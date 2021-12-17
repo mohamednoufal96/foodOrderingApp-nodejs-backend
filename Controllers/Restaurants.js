@@ -40,6 +40,8 @@ exports.getRestaurantById = (req, res) => {
         });
 };
 
+
+// Filter restaurants
 exports.filterRestaurants = (req, res) => {
     const { location, mealtype, cuisine, lcost, hcost, sort, page = 1 } = req.body;
 
@@ -83,8 +85,6 @@ exports.filterRestaurants = (req, res) => {
                 paginatedResult = arr.slice(page_size * (page_no - 1), page_size * page_no);
                 return paginatedResult;
             }
-
-          
 
             tempArray = paginate(result, pageSize, page);
 
