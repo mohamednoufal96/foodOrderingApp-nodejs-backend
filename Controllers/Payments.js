@@ -24,7 +24,7 @@ exports.payment = (req, res) => {
         TXN_AMOUNT: amount.toString(),
         EMAIL: email,
         MOBILE_NO: mobileNo.toString(),
-        CALLBACK_URL: "https://zomato-clone-be.herokuapp.com/paymentCallback",
+        CALLBACK_URL: "https://zomato-b22-nodejs.herokuapp.com/paymentCallback",
     };
 
     // use PaytmChecksum to generate a signature
