@@ -58,8 +58,6 @@ const RestaurantSchema = new Schema({
         type: Number,
         required: true,
     },
-
-    
 });
 
 // create a model using the schema and connent to MongoDB and export the model

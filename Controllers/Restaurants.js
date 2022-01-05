@@ -40,11 +40,10 @@ exports.getRestaurantById = (req, res) => {
         });
 };
 
-
 // Filter restaurants
 exports.filterRestaurants = (req, res) => {
+    debugger;
     const { location, mealtype, cuisine, lcost, hcost, sort, page = 1 } = req.body;
-
     let filters = {};
 
     if (mealtype) {

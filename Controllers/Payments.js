@@ -1,7 +1,6 @@
 
 // require all the packages needed
 require("dotenv").config();
-
 const formidable = require("formidable");
 const https = require("https");
 const { v4: uuidv4 } = require("uuid");
@@ -24,7 +23,7 @@ exports.payment = (req, res) => {
         TXN_AMOUNT: amount.toString(),
         EMAIL: email,
         MOBILE_NO: mobileNo.toString(),
-        CALLBACK_URL: "https://zomato-b22-nodejs.herokuapp.com/paymentCallback",
+        CALLBACK_URL: "http://localhost:5000/paymentCallback",
     };
 
     // use PaytmChecksum to generate a signature
