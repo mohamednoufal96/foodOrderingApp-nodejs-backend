@@ -1,5 +1,5 @@
 // import the Models
-const Menu = require("../Models/Menu");
+const Menu = require("../models/Menu");
 
 // export the controller functionalities
 

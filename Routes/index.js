@@ -3,12 +3,12 @@ const express = require("express");
 const router = express.Router();
 
 // import the controllers
-const locationController = require("../Controllers/Locations");
-const restaurantController = require("../Controllers/Restaurants");
-const mealtypeController = require("../Controllers/Mealtypes");
-const userController = require("../Controllers/Users");
-const menuController = require("../Controllers/Menu");
-const paymentsController = require("../Controllers/Payments");
+const locationController = require("../controllers/Locations");
+const restaurantController = require("../controllers/Restaurants");
+const mealtypeController = require("../controllers/Mealtypes");
+const userController = require("../controllers/Users");
+const menuController = require("../controllers/Menu");
+const paymentsController = require("../controllers/Payments");
 // const orderDetailsController = require("../Controllers/OrderDetails");
 
 // declare the routes and bind it with controller methods

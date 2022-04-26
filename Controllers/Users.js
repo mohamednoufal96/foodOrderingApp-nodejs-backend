@@ -1,5 +1,5 @@
 // import the Models
-const Users = require("../Models/Users");
+const Users = require("../models/Users");
 
 // export the controller functionalities
 // login

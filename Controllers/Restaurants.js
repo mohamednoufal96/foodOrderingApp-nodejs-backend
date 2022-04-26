@@ -1,5 +1,5 @@
 // import the Models
-const Restaurants = require("../Models/Restaurants");
+const Restaurants = require("../models/Restaurants");
 
 // export the controller functionalities
 exports.getAllRestaurantsByLocation = (req, res) => {
@@ -72,6 +72,8 @@ exports.filterRestaurants = (req, res) => {
             };
         }
     }
+
+    console.log("the filter object is ", filter);
 
     Restaurants.find(filters)
         .sort({ min_price: sort })
